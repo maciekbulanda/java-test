@@ -6,4 +6,4 @@ public class Main {
         System.out.println("main thread");
         new Thread((Runnable) () -> System.out.println("test:" + Thread.currentThread().getName()),"my new thread").start();
     }
-}
+} aaaaa
