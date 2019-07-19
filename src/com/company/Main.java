@@ -11,5 +11,6 @@ public class Main {
         String text = scanner.nextLine();
         t.stop = true;
         System.out.println(text);
+        System.out.println("end.....");
     }
 }
