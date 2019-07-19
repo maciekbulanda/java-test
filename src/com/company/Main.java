@@ -1,9 +1,15 @@
 package com.company;
 import java.lang.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("main thread");
-        new Thread((Runnable) () -> System.out.println("test:" + Thread.currentThread().getName()),"my new thread").start();
+        MyThread t = new MyThread();
+        t.start();
+        String text = scanner.nextLine();
+        t.stop = true;
+        System.out.println(text);
     }
-} aaaaa
+}
