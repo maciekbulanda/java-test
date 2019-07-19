@@ -8,7 +8,8 @@ public class Main {
         System.out.println("main thread");
         MyThread t = new MyThread();
         t.start();
-        scanner.nextLine();
+        String text = scanner.nextLine();
         t.stop = true;
+        System.out.println(text);
     }
 }
