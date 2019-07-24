@@ -1,6 +1,7 @@
 package com.company;
 import java.lang.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Stream;
@@ -14,6 +15,6 @@ public class Main {
             lista.add(num);
         }
         Stream<Integer> str = lista.stream();
-        str.distinct().sorted().forEach(System.out::println);
+        System.out.println(str.reduce(0, (x,y) -> x+y));
     }
 }
