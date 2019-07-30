@@ -1,20 +1,30 @@
 package com.company;
 import java.lang.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int num;
-        List<Integer> lista = new ArrayList<>();
-        while ((num = scanner.nextInt()) != 0) {
-            lista.add(num);
+        int num = scanner.nextInt();
+        Deque<Integer> lista = new ArrayDeque<>();
+        for (int i=0; i < num; i++) {
+            String cmd = scanner.next();
+            int nmbr=0;
+            switch (cmd) {
+                case "push" :
+                    nmbr = scanner.nextInt();
+                    lista.push(nmbr);
+                    break;
+                case "pop" :
+                    lista.pop();
+                    break;
+                case "max" :
+                    Stream<Integer> str = lista.stream();
+                    System.out.println(str.reduce(BinaryOperator.maxBy(Comparator.naturalOrder())).get());
+                default:
+            }
         }
-        Stream<Integer> str = lista.stream();
-        System.out.println(str.reduce(0, (x,y) -> x+y));
     }
 }
