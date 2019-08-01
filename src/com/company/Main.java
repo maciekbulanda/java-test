@@ -1,15 +1,21 @@
 package com.company;
-import java.lang.*;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("main thread");
-        MyThread t = new MyThread();
-        t.start();
-        String text = scanner.nextLine();
-        t.stop = true;
-        System.out.println(text);
+        String line = scanner.nextLine();
+        String[] words = line.split(" ");
+        Map<String,Integer> list = new HashMap<>();
+        for (String word : words) {
+            if (list.containsKey(word)) {
+                int n = list.get(word);
+                list.put(word,++n);
+
+            } else {
+                list.put(word, 1);
+            }
+        }
+        System.out.println(list);
     }
 }
