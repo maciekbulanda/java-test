@@ -1,30 +1,16 @@
 package com.company;
 import java.lang.*;
-import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.stream.Stream;
+
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int num = scanner.nextInt();
-        Deque<Integer> lista = new ArrayDeque<>();
-        for (int i=0; i < num; i++) {
-            String cmd = scanner.next();
-            int nmbr=0;
-            switch (cmd) {
-                case "push" :
-                    nmbr = scanner.nextInt();
-                    lista.push(nmbr);
-                    break;
-                case "pop" :
-                    lista.pop();
-                    break;
-                case "max" :
-                    Stream<Integer> str = lista.stream();
-                    System.out.println(str.reduce(BinaryOperator.maxBy(Comparator.naturalOrder())).get());
-                default:
-            }
-        }
+        Apple apple1 = new Apple(10);
+        Apple apple2 = new Apple(13);
+        System.out.println(apple2.compareTo(apple1));
+        Orange orange1 = new Orange(15);
+        Orange orange2 = new Orange(11);
+        System.out.println(orange1.compareTo(orange2));
+
+
     }
 }
