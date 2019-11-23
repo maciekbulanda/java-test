@@ -3,19 +3,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String line = scanner.nextLine();
-        String[] words = line.split(" ");
-        Map<String,Integer> list = new HashMap<>();
-        for (String word : words) {
-            if (list.containsKey(word)) {
-                int n = list.get(word);
-                list.put(word,++n);
+        List<Car> cars = new ArrayList<>();
+        cars.add(new Car("SG 0070E","Volvo S60"));
 
-            } else {
-                list.put(word, 1);
-            }
-        }
-        System.out.println(list);
+        System.out.println(cars);
     }
 }
